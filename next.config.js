@@ -15,16 +15,19 @@ const cspHeader = `
 
 /** @type {import("next").NextConfig} */
 const config = {
-    async headers() {
-        return [
-            {source: "/(.*)",
-                headers: [
-                  {
-                    key: "Content-Security-Policy",
-                    value: cspHeader.replace(/\n/g, ""),
-                  },}
-        ]
-    }
+  async headers() {
+    return [
+      {
+        source: "/(.*)",
+        headers: [
+          {
+            key: "Content-Security-Policy",
+            value: cspHeader.replace(/\n/g, ""),
+          },
+        ],
+      },
+    ];
+  },
 };
 
 export default config;
