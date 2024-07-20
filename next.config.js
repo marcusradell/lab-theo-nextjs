@@ -6,7 +6,7 @@ await import("./src/env.js");
 
 const cspHeader = `
   default-src: 'self';
-  script-src: 'self' 'unsafe-inline' 'unsafe-eval' https://warm-lobster-4.clerk.accounts.dev;
+  script-src: 'self' 'unsafe-inline' 'unsafe-eval' https://warm-lobster-4.clerk.accounts.dev https://clerk.accounts.dev;
   connect-src: 'self' https://warm-lobster-4.clerk.accounts.dev;
   img-src: 'self' https://img.clerk.com;
   worker-src: 'self' blob:;
