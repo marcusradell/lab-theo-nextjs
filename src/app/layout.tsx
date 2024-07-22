@@ -3,6 +3,9 @@ import "@uploadthing/react/styles.css";
 import { GeistSans } from "geist/font/sans";
 import { ClerkProvider } from "@clerk/nextjs";
 import { TopNav } from "~/top-nav";
+import { NextSSRPlugin } from "@uploadthing/react/next-ssr-plugin";
+import { extractRouterConfig } from "uploadthing/server";
+import { ourFileRouter } from "~/app/api/uploadthing/core";
 
 export const metadata = {
   title: "Lab Theo Next.js",
@@ -18,6 +21,7 @@ export default function RootLayout({
   return (
     <ClerkProvider>
       <html lang="en" className={`${GeistSans.variable}`}>
+        <NextSSRPlugin routerConfig={extractRouterConfig(ourFileRouter)} />
         <body className="flex flex-col gap-4">
           <TopNav />
           {children}
