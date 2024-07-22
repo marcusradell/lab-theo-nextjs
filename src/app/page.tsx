@@ -16,6 +16,7 @@ async function Images() {
             // eslint-disable-next-line @next/next/no-img-element
             <img src={image.url} alt={image.name} />
           }
+          <div>{image.name}</div>
         </div>
       ))}
     </div>
