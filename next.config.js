@@ -15,6 +15,9 @@ const cspHeader = `
 
 /** @type {import("next").NextConfig} */
 const config = {
+  images: {
+    remotePatterns: [{ hostname: "utfs.io" }],
+  },
   async headers() {
     return [
       {
